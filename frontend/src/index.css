@@ -16,7 +16,6 @@ body {
   padding: 20px;
 }
 
-/* ── Header ── */
 .header {
   display: flex;
   justify-content: space-between;
@@ -30,7 +29,6 @@ body {
 
 .header h1 { color: #2c3e50; font-size: 26px; }
 
-/* ── Search / Filter ── */
 .search-filter {
   display: flex;
   gap: 10px;
@@ -56,7 +54,6 @@ body {
   box-shadow: 0 0 0 3px rgba(52,152,219,0.15);
 }
 
-/* ── Modal Backdrop ── */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -74,7 +71,6 @@ body {
   to   { opacity: 1; }
 }
 
-/* ── Modal Box ── */
 .modal-box {
   background: white;
   border-radius: 14px;
@@ -91,7 +87,6 @@ body {
   to   { transform: translateY(0);    opacity: 1; }
 }
 
-/* ── Detail Modal wider layout ── */
 .detail-modal {
   max-width: 700px;
 }
@@ -111,7 +106,6 @@ body {
 
 .modal-header h2 { font-size: 18px; color: #2c3e50; }
 
-/* ── Detail Body ── */
 .detail-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -201,7 +195,6 @@ body {
 
 .detail-actions .btn { flex: 1; }
 
-/* ── Stock Badge ── */
 .stock-badge {
   position: absolute;
   top: 10px;
@@ -217,7 +210,6 @@ body {
 .stock-low { background: #fff3cd; color: #856404; }
 .stock-out { background: #fde8e8; color: #c0392b; }
 
-/* ── Product Form inside modal ── */
 .product-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -256,7 +248,6 @@ body {
 
 .error-message { color: #e74c3c; font-size: 12px; margin-top: 4px; }
 
-/* ── Image Picker ── */
 .image-picker {
   border: 2px dashed #c8d0db;
   border-radius: 8px;
@@ -294,7 +285,6 @@ body {
   display: block;
 }
 
-/* ── Modal Actions ── */
 .modal-actions {
   grid-column: 1 / -1;
   display: flex;
@@ -305,7 +295,6 @@ body {
   margin-top: 4px;
 }
 
-/* ── Buttons ── */
 .btn {
   padding: 10px 18px;
   border: none;
@@ -442,7 +431,6 @@ body {
   font-size: 12px;
 }
 
-/* ── Status messages ── */
 .loading, .error, .empty-message {
   text-align: center;
   padding: 40px 20px;
@@ -465,7 +453,6 @@ body {
   margin-top: 16px;
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
   .products-grid { grid-template-columns: 1fr; }
   .product-form  { grid-template-columns: 1fr; }

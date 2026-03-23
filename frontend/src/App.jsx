@@ -10,9 +10,7 @@ function App() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    // Form modal: null = closed | 'add' | {product} = edit
     const [formModal, setFormModal] = useState(null);
-    // Detail modal: null = closed | {product} = viewing
     const [detailModal, setDetailModal] = useState(null);
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -122,7 +120,7 @@ function App() {
                 onDeleteProduct={handleDeleteProduct}
             />
 
-            {/* Detail modal */}
+            {}
             {detailModal && (
                 <ProductDetail
                     product={detailModal}
@@ -138,7 +136,7 @@ function App() {
                 />
             )}
 
-            {/* Add / Edit form modal */}
+            {}
             {formModal !== null && (
                 <ProductForm
                     onSubmit={handleFormSubmit}

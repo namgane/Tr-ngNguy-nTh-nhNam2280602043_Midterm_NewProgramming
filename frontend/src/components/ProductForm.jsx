@@ -14,7 +14,6 @@ function ProductForm({ onSubmit, onClose, initialData }) {
     const [errors, setErrors] = useState({});
     const fileInputRef = useRef();
 
-    // Pre-fill form khi edit
     useEffect(() => {
         if (initialData) {
             setFormData({
@@ -40,7 +39,6 @@ function ProductForm({ onSubmit, onClose, initialData }) {
         }));
     };
 
-    // Chọn ảnh, resize + compress bằng Canvas trước khi lưu (tránh lỗi 413)
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (!file) return;
@@ -49,10 +47,9 @@ function ProductForm({ onSubmit, onClose, initialData }) {
         reader.onloadend = () => {
             const img = new Image();
             img.onload = () => {
-                const MAX_SIZE = 800; // px
+                const MAX_SIZE = 800; 
                 let { width, height } = img;
 
-                // Scale down nếu ảnh quá lớn
                 if (width > MAX_SIZE || height > MAX_SIZE) {
                     if (width > height) {
                         height = Math.round((height * MAX_SIZE) / width);
@@ -68,7 +65,6 @@ function ProductForm({ onSubmit, onClose, initialData }) {
                 canvas.height = height;
                 canvas.getContext('2d').drawImage(img, 0, 0, width, height);
 
-                // Compress sang JPEG, quality 0.75 (~50-150KB thay vì vài MB)
                 const compressed = canvas.toDataURL('image/jpeg', 0.75);
                 setImagePreview(compressed);
                 setFormData(prev => ({ ...prev, image: compressed }));
@@ -112,7 +108,7 @@ function ProductForm({ onSubmit, onClose, initialData }) {
                 </div>
 
                 <form className="product-form" onSubmit={handleSubmit}>
-                    {/* Image picker */}
+                    {}
                     <div className="form-group full-width">
                         <label>Ảnh sản phẩm *</label>
                         <div
@@ -149,7 +145,7 @@ function ProductForm({ onSubmit, onClose, initialData }) {
                         {errors.image && <span className="error-message">{errors.image}</span>}
                     </div>
 
-                    {/* Name */}
+                    {}
                     <div className="form-group">
                         <label>Tên sản phẩm *</label>
                         <input
@@ -163,7 +159,7 @@ function ProductForm({ onSubmit, onClose, initialData }) {
                         {errors.name && <span className="error-message">{errors.name}</span>}
                     </div>
 
-                    {/* Category */}
+                    {}
                     <div className="form-group">
                         <label>Danh mục *</label>
                         <select
@@ -179,7 +175,7 @@ function ProductForm({ onSubmit, onClose, initialData }) {
                         {errors.category && <span className="error-message">{errors.category}</span>}
                     </div>
 
-                    {/* Price */}
+                    {}
                     <div className="form-group">
                         <label>Giá ($) *</label>
                         <input
@@ -195,7 +191,7 @@ function ProductForm({ onSubmit, onClose, initialData }) {
                         {errors.price && <span className="error-message">{errors.price}</span>}
                     </div>
 
-                    {/* Stock */}
+                    {}
                     <div className="form-group">
                         <label>Tồn kho *</label>
                         <input
